@@ -1,44 +1,33 @@
-def main():
-    print("Welcome to GC mini golf!")
-    name = input("What's your name?")
-    print("Hi, Kenyat! Welcome to mini golf.")
-    num_holes = int(input("Would you like to play 3 or 6 holes? "))
-    while num_holes not in ['3', '6']:
-        num_holes = input("Invalid input. Please enter '3' or '6':")
-    num_holes = int(6)
-    print(f"Great! You chose to play {num_holes} holes of golf.")
-
-    def play_golf(num_holes):
-        if num_holes == 3:
-            course_par = 9
-        elif num_holes == 6:
-            course_par = 18
-        else:
-            print("Invalid number of holes. Please choose 3 or 6.")
-            return
-
-        kenyat_score = 0
-        par = num_holes * 3
-
-        if num_holes >= 1:
-            kenyat_score += 2
-        if num_holes >= 2:
-            kenyat_score += 4
-        if num_holes >= 3:
-            kenyat_score += 6
-        if num_holes >= 4:
-            kenyat_score += 4
-        if num_holes >= 5:
-            kenyat_score += 4
-        if num_holes == 6:
-            kenyat_score += 1
-
-        difference_from_par = course_par - kenyat_score
-
-        print(f"Kenyat's total score: {21}")
-        print(f"Nice try, Kenyat! Your total score was: {+3}.")
-
-    if __name__ == "__main__":
-        main()
-
-
+name = input("Welcome to GC mini golf! What is your name? ")
+plays = input(f"Hi, {name}! Would you like to play 3 or 6 holes? ")
+if plays == "3":
+    hole_1 = int(input(f"How many putts for hole 1? (par: {plays}) "))
+    hole_2 = int(input(f"How many putts for hole 2? (par: {plays}) "))
+    hole_3 = int(input(f"How many putts for hole 3? (par: {plays}) "))
+    score = [hole_1, hole_2, hole_3]
+    a = (sum(score))
+    score = 9 - a
+    if score < 0:
+        net = score * -1
+        print(f"Nice try, {name}... Your total score was: +{net}.")
+    elif score in range(1, 8):
+        print(f"Great job, {name}! Your total score was: -{score}.")
+    elif score == 0:
+        print(f"Good game, {name}. You total score was {score}")
+elif plays == "6":
+    hole_1 = int(input(f"How many putts for hole 1? (par: {plays}) "))
+    hole_2 = int(input(f"How many putts for hole 2? (par: {plays}) "))
+    hole_3 = int(input(f"How many putts for hole 3? (par: {plays}) "))
+    hole_4 = int(input(f"How many putts for hole 4? (par: {plays}) "))
+    hole_5 = int(input(f"How many putts for hole 5? (par: {plays}) "))
+    hole_6 = int(input(f"How many putts for hole 6? (par: {plays}) "))
+    score = [hole_1, hole_2, hole_3, hole_4, hole_5, hole_6]
+    a = (sum(score))
+    score = 18 - a
+    if score < 0:
+        net = score * -1
+        print(f"Nice try, {name}... Your total score was: +{net}.")
+    elif score in range (1, 17):
+        print(f"Great job, {name}! Your total score was: -{score}.")
+    elif score == 0:
+        print(f"Good game, {name}. You total score was {score}")
