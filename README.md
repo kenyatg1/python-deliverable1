@@ -31,3 +31,5 @@ elif plays == "6":
         print(f"Great job, {name}! Your total score was: -{score}.")
     elif score == 0:
         print(f"Good game, {name}. You total score was {score}")
+
+        hello
