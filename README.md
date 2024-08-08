@@ -32,4 +32,4 @@ elif plays == "6":
     elif score == 0:
         print(f"Good game, {name}. You total score was {score}")
 
-        hello
+
